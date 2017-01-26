@@ -4,24 +4,25 @@
 	<title>Firebase: Sign Up User Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
-  <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  
   <!-- Bootsrap 4 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
 
 
 </head>
 <body>
 <!-- Jumbotron Header -->
-<div class="container-fluid">
-  <div class="jumbotron jumbotron-fluid text-center">
+<div class="container">
+  <div class="jumbotron jumbotron-fluid text-center has-success">
     <h1 class="display-3">Sign Up Today!</h1>
     <p class="lead">This is a sign up input page using Firebase database.</p>
   </div>
+</div>
 
 <!-- New Member Sign Up Form -->
+<div class="container">
   <div class="row">
     <div class="col-lg-6">
       <div class="card">
@@ -60,19 +61,40 @@
       <div class="card">
         <h3 class="card-header">New Member Visits!</h3>
           <div class="card-block">
-            <h4 class="card-title">See Who Else Has Visited our Page!</h4>
-              <div class="alert alert-success" role="alert">
-                <h2 id="nameDisplay"></h2>
-                <h2 id="emailDisplay"></h2>
-                <h2 id="ageDisplay"></h2>
-                <h2 id="commentDisplay"></h2>
+            <h4 class="card-title">See Who The Last Person to Visit our Page was!</h4>
+              <div class=" alert alert-success" role="alert">
+                <div class="well">
+                  <h2 id="nameDisplay"></h2>
+                  <h2 id="emailDisplay"></h2>
+                  <h2 id="ageDisplay"></h2>
+                  <h2 id="commentDisplay"></h2>
+                </div>
               </div>
           </div>
         </div>
       </div>
     </div>
-
-
+  </div>
+<br>
+<!-- All User Card well -->
+<div class="container"> 
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+            <h3 class="card-header">All Members</h3>
+              <div class="card-block">
+                <h4 class="card-title">Check Out All of Our Members!</h4>
+                  <div class="alert alert-success" role="alert">
+                    <div id="well">
+                      
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script type="text/javascript" src="logic.js"></script>
