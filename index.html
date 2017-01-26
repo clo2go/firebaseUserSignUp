@@ -10,90 +10,98 @@
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
 
-
 </head>
 <body>
-<!-- Jumbotron Header -->
-<div class="container">
-  <div class="jumbotron jumbotron-fluid text-center has-success">
-    <h1 class="display-3">Sign Up Today!</h1>
-    <p class="lead">This is a sign up input page using Firebase database.</p>
-  </div>
-</div>
 
-<!-- New Member Sign Up Form -->
 <div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="card">
-        <h3 class="card-header">New Member Sign Up</h3>
-          <div class="card-block">
-            <h4 class="card-title">Input Your Deets Here!</h4>
-              <div>
-                <form>
-                  <div class="form-group has-success">
-                    <label for="text">Name:</label>
-                    <input type="text" class="form-control" id="nameInput" placeholder="Enter Name">
-                  </div>
-                  <div class="form-group has-success">
-                    <label for="text">Email address: </label>
-                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                  </div>
-                  <div class="form-group has-success">
-                    <label for="text">Age: </label>
-                    <input type="number" class="form-control" id="ageInput" placeholder="Enter age">
-                  </div>
-                  <div class="form-group has-success">
-                    <label for="text">How Did You Learn About Us?</label>
-                    <textarea class="form-control" rows="5" id="commentInput" placeholder="Your input would really help us out."></textarea>
-                  </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-              </form>
+  
+  <br>
+
+<!-- Jumbotron Header -->
+    <div class="jumbotron jumbotron-fluid text-center has-success">
+      <h1 class="display-3">Sign Up Today!</h1>
+      <p class="lead">This is a sign up input page using Firebase database.</p>
+    </div>
+
+  <!-- New Member Sign Up Form -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <h3 class="card-header">New Member Sign Up</h3>
+            <div class="card-block">
+              <h4 class="card-title">Input Your Deets Here!</h4>
+                <!-- Sign Up Form Inputs -->
+                <div class="panel-body">
+                  <form role="form">
+                    <!-- NAME -->
+                    <div class="form-group has-success">
+                      <label for="text">Name:</label>
+                      <input type="text" class="form-control" id="nameInput" placeholder="Enter Name">
+                    </div>
+                  <!-- EMAIL -->
+                    <div class="form-group has-success">
+                      <label for="text">Email address: </label>
+                      <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <!-- AGE -->
+                    <div class="form-group has-success">
+                      <label for="text">Age: </label>
+                      <input type="number" class="form-control" id="ageInput" placeholder="Enter age">
+                    </div>
+                    <!-- COMMENT -->
+                    <div class="form-group has-success">
+                      <label for="text">How Did You Learn About Us?</label>
+                      <textarea class="form-control" rows="5" id="commentInput" placeholder="Your input would really help us out."></textarea>
+                    </div>
+                     <!-- BUTTON -->
+                      <button type="submit" class="btn btn-success" id="addUser">Submit</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    
+      
 
-<!-- Most Recent User List Table -->
-    <div class="col-lg-6">
-      <div class="card">
-        <h3 class="card-header">New Member Visits!</h3>
-          <div class="card-block">
-            <h4 class="card-title">See Who The Last Person to Visit our Page was!</h4>
-              <div class=" alert alert-success" role="alert">
-                <div class="well">
-                  <h2 id="nameDisplay"></h2>
-                  <h2 id="emailDisplay"></h2>
-                  <h2 id="ageDisplay"></h2>
-                  <h2 id="commentDisplay"></h2>
+  <!-- Most Recent User List Table -->
+      <div class="col-lg-6">
+        <div class="card">
+          <h3 class="card-header">New Member Visits!</h3>
+            <div class="card-block">
+              <h4 class="card-title">See Who The Last Person to Visit our Page was!</h4>
+                <div class=" alert alert-success" role="alert" id="recentMember">
+                    <h2 id="nameDisplay"></h2>
+                    <h4 id="emailDisplay"></h4>
+                    <h4 id="ageDisplay"></h4>
+                    <p id="commentDisplay"></p>
                 </div>
-              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-<br>
-<!-- All User Card well -->
-<div class="container"> 
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-            <h3 class="card-header">All Members</h3>
-              <div class="card-block">
-                <h4 class="card-title">Check Out All of Our Members!</h4>
-                  <div class="alert alert-success" role="alert">
-                    <div id="well">
-                      
+  <br>
+  <!-- All User Card well -->
+  <div class="container"> 
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+              <h3 class="card-header">All Members</h3>
+                <div class="card-block">
+                  <h4 class="card-title">Check Out All of Our Members!</h4>
+                    <div class="alert alert-success" role="alert">
+                      <div id="well">
+                        
+                      </div>
                     </div>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+  <br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

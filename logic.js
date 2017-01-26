@@ -1,14 +1,24 @@
 // Initialize Firebase
+// var config = {
+// 	apiKey: "AIzaSyB4cagvjI7_ZjY7S9GIcqgOFElMGQv8QL8",
+// 	authDomain: "user-sign-up-ed08b.firebaseapp.com",
+// 	databaseURL: "https://user-sign-up-ed08b.firebaseio.com",
+// 	storageBucket: "user-sign-up-ed08b.appspot.com",
+// 	messagingSenderId: "214886211251"
+// };
+//  firebase.initializeApp(config);
+// Initialize Firebase
+alert('hello');
 var config = {
-	apiKey: "AIzaSyB4cagvjI7_ZjY7S9GIcqgOFElMGQv8QL8",
-	authDomain: "user-sign-up-ed08b.firebaseapp.com",
-	databaseURL: "https://user-sign-up-ed08b.firebaseio.com",
-	storageBucket: "user-sign-up-ed08b.appspot.com",
-	messagingSenderId: "214886211251"
+	apiKey: "AIzaSyCP7zZ94j7JMAMSe3QEvZGCD-FbnxDmxDE",
+	authDomain: "new-user-5fd39.firebaseapp.com",
+	databaseURL: "https://new-user-5fd39.firebaseio.com",
+	storageBucket: "new-user-5fd39.appspot.com",
+	messagingSenderId: "407267999379"
 };
- firebase.initializeApp(config);
+firebase.initializeApp(config);
 
- var dataRef = firebase.database();
+var dataRef = firebase.database();
 
   // Initial Values
 var name = "";
@@ -34,11 +44,11 @@ var comment = "";
   })
   // all members listener
 dataRef.ref().on("child_added", function(snapshot) {
-	$(".well").append("<p>"+snapshot.val().name+"</p>");
-	$(".well").append("<p>"+snapshot.val().email+"</p>");
-	$(".well").append("<p>"+snapshot.val().age+"</p>");
-	$(".well").append("<p>"+snapshot.val().comment+"</p>");
-	$(".well").append("<hr>");
+	$("#well").append("<p>"+snapshot.val().name+"</p>");
+	$("#well").append("<p>"+snapshot.val().email+"</p>");
+	$("#well").append("<p>"+snapshot.val().age+"</p>");
+	$("#well").append("<p>"+snapshot.val().comment+"</p>");
+	$("#well").append("<hr>");
 })
 // recent input listener
 dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
