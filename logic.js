@@ -1,14 +1,3 @@
-// Initialize Firebase
-// var config = {
-// 	apiKey: "AIzaSyB4cagvjI7_ZjY7S9GIcqgOFElMGQv8QL8",
-// 	authDomain: "user-sign-up-ed08b.firebaseapp.com",
-// 	databaseURL: "https://user-sign-up-ed08b.firebaseio.com",
-// 	storageBucket: "user-sign-up-ed08b.appspot.com",
-// 	messagingSenderId: "214886211251"
-// };
-//  firebase.initializeApp(config);
-// Initialize Firebase
-alert('hello');
 var config = {
 	apiKey: "AIzaSyCP7zZ94j7JMAMSe3QEvZGCD-FbnxDmxDE",
 	authDomain: "new-user-5fd39.firebaseapp.com",
@@ -40,7 +29,7 @@ var comment = "";
   		comment:comment,
   		dateAdded: firebase.database.ServerValue.TIMESTAMP
   	})
-  	// return false;
+  	return false;
   })
   // all members listener
 dataRef.ref().on("child_added", function(snapshot) {
